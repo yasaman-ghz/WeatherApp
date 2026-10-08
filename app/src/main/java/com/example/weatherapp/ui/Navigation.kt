@@ -1,5 +1,6 @@
 package com.example.weatherapp.ui
 
+import android.graphics.Color
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CalendarMonth
@@ -36,8 +37,8 @@ fun Navigation() {
         topBar = {
             TopAppBar(
                 colors = topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.primaryContainer,
-                    titleContentColor = MaterialTheme.colorScheme.primary,
+                    containerColor = MaterialTheme.colorScheme.surfaceTint,
+                    titleContentColor = MaterialTheme.colorScheme.surfaceBright,
                 ),
                 title = {
                     Text("Your Weather App")
@@ -45,16 +46,16 @@ fun Navigation() {
             )
         },
         bottomBar = {
-            NavigationBar(containerColor = MaterialTheme.colorScheme.primaryContainer,
-                contentColor = MaterialTheme.colorScheme.surfaceDim,  //just for fun
+            NavigationBar(containerColor = MaterialTheme.colorScheme.surfaceTint,
+                contentColor = MaterialTheme.colorScheme.surfaceBright,  //just for fun
                 windowInsets = NavigationBarDefaults.windowInsets)
             {
                 NavigationBarItem(
                     icon = { Icon(imageVector = Icons.Default.Today, contentDescription = "Today") },
-                    label = { Text("Today") },
-                    selected = selectedIndex==1,
+                    label = { Text("Today", color=MaterialTheme.colorScheme.surfaceBright) },
+                    selected = selectedIndex==0,
                     onClick = {
-                        selectedIndex = 1
+                        selectedIndex = 0
                         navController.navigate(route="Today"){
                             popUpTo(navController.graph.findStartDestination().id) {
                                 saveState = true
@@ -67,7 +68,7 @@ fun Navigation() {
 
                 NavigationBarItem(
                     icon = { Icon(imageVector = Icons.Default.CalendarMonth, contentDescription = "Forecast") },
-                    label = { Text("Forecast") },
+                    label = { Text("Forecast", color=MaterialTheme.colorScheme.surfaceBright) },
                     selected = selectedIndex==0,
                     onClick = {
                         selectedIndex = 0

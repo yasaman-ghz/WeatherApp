@@ -1,6 +1,8 @@
 package com.example.weatherapp.ui.screens
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -10,14 +12,19 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.DividerDefaults
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.weatherapp.R
 import com.example.weatherapp.models.Weather
 import java.sql.Time
@@ -40,8 +47,8 @@ fun ForecastWeather(){
             windSpeed= 10,
             windDir= "South-West",
             humidity= 70,
-            description= "Lots of fog, but it's pretty warm out there!",
-            iconId= R.drawable.today
+            description= "Thunder",
+            iconId= R.drawable.thunder
         ),
         Weather(
             id=2,
@@ -54,8 +61,8 @@ fun ForecastWeather(){
             windSpeed= 10,
             windDir= "South-West",
             humidity= 70,
-            description= "Lots of fog, but it's pretty warm out there!",
-            iconId= R.drawable.today
+            description= "Cloudy",
+            iconId= R.drawable.cloudy_day_2
         ),
         Weather(
             id=3,
@@ -68,8 +75,8 @@ fun ForecastWeather(){
             windSpeed= 10,
             windDir= "South-West",
             humidity= 70,
-            description= "Lots of fog, but it's pretty warm out there!",
-            iconId= R.drawable.today
+            description= "Sunny",
+            iconId= R.drawable.day
         ),
         Weather(
             id=1,
@@ -82,8 +89,8 @@ fun ForecastWeather(){
             windSpeed= 10,
             windDir= "South-West",
             humidity= 70,
-            description= "Lots of fog, but it's pretty warm out there!",
-            iconId= R.drawable.today
+            description= "Sunny",
+            iconId= R.drawable.day
         ),
         Weather(
             id=1,
@@ -96,8 +103,8 @@ fun ForecastWeather(){
             windSpeed= 10,
             windDir= "South-West",
             humidity= 70,
-            description= "Lots of fog, but it's pretty warm out there!",
-            iconId= R.drawable.today
+            description= "Rainy",
+            iconId= R.drawable.rainy_7
         ),
         Weather(
             id=1,
@@ -110,8 +117,8 @@ fun ForecastWeather(){
             windSpeed= 10,
             windDir= "South-West",
             humidity= 70,
-            description= "Lots of fog, but it's pretty warm out there!",
-            iconId= R.drawable.today
+            description= "Cloudy",
+            iconId= R.drawable.cloudy_day_2
         ),
         Weather(
             id=1,
@@ -124,41 +131,52 @@ fun ForecastWeather(){
             windSpeed= 10,
             windDir= "South-West",
             humidity= 70,
-            description= "Lots of fog, but it's pretty warm out there!",
-            iconId= R.drawable.today
+            description= "Sunny",
+            iconId= R.drawable.day
         )
     )
 
     LazyColumn(
         modifier = Modifier.padding()
+            .background(color=Color.DarkGray)
     ) {
         items(days) { day ->
             Row(modifier = Modifier.padding(10.dp)) {
-                Image(
-                    painter = painterResource(id = day.iconId),
-                    contentDescription = day.description,
-                    modifier = Modifier.size(130.dp)
+                val imageModifier= Modifier
+                    .height(90.dp)
+                    .width(90.dp)
+                    .clip(CircleShape)
+                    .border(color = Color.LightGray, width = 1.dp, shape = CircleShape)
+                    .background(color = Color.LightGray)
+                Image(                                      // Reference: https://developer.android.com/develop/ui/compose/graphics/images/customize
+                    painter = painterResource(day.iconId ),
+                    contentDescription = "Today's weather",
+                    modifier = imageModifier
                 )
                 Spacer(modifier = Modifier.width(5.dp))
                 Column {
 
                     Text(
-                        "${day.dayOfWeek}",
-                        style = MaterialTheme.typography.headlineMedium
+                        "${day.dayOfWeek}, ${day.temp}°C",
+                        style = MaterialTheme.typography.headlineMedium,
+                        fontSize = 18.sp,
+                        color=Color.LightGray
                     )
 
-                    Spacer(modifier = Modifier.height(5.dp))
+                    Spacer(modifier = Modifier.height(3.dp))
 
                     Text(
-                        day.description,
-                        style = MaterialTheme.typography.headlineSmall
+                        "${day.description}, Feels: ${day.tempFeels}°C",
+                        style = MaterialTheme.typography.headlineSmall,
+                        fontSize = 16.sp,
+                        color=Color.LightGray
                     )
 
 
                 }
 
             }
-            HorizontalDivider(Modifier, DividerDefaults.Thickness, DividerDefaults.color)
+            HorizontalDivider(Modifier, 2.dp, Color.LightGray)
         }
 
 
