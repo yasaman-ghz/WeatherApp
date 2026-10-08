@@ -153,7 +153,7 @@ fun ForecastWeather(){
                     contentDescription = "Today's weather",
                     modifier = imageModifier
                 )
-                Spacer(modifier = Modifier.width(5.dp))
+                Spacer(modifier = Modifier.width(10.dp))
                 Column {
 
                     Text(
@@ -163,7 +163,7 @@ fun ForecastWeather(){
                         color=Color.LightGray
                     )
 
-                    Spacer(modifier = Modifier.height(3.dp))
+                    Spacer(modifier = Modifier.height(1.dp))
 
                     Text(
                         "${day.description}, Feels: ${day.tempFeels}°C",

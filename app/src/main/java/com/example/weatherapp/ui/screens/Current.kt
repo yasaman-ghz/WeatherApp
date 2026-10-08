@@ -12,10 +12,16 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.DividerDefaults
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.material3.VerticalDivider
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -37,81 +43,185 @@ import java.util.Date
 // Get today's weather
 //
 
+val hours= listOf(
+   Weather(
+        id = 1,
+        date = Date(),
+        time = Time(900000),
+        dayOfWeek = DayOfWeek.MONDAY,
+        location = "Halifax",
+        temp = 17,
+        tempFeels = 22,
+        windSpeed = 10,
+        windDir = "South-West",
+        humidity = 70,
+        description = "Sunny",
+        iconId = R.drawable.day
+    ),
+   Weather(
+        id = 2,
+        date = Date(),
+        time = Time(1000000),
+        dayOfWeek = DayOfWeek.MONDAY,
+        location = "Halifax",
+        temp = 16,
+        tempFeels = 22,
+        windSpeed = 10,
+        windDir = "South-West",
+        humidity = 70,
+        description = "Sunny",
+        iconId = R.drawable.day
+    ),
+   Weather(
+        id = 3,
+        date = Date(),
+        time = Time(1100000),
+        dayOfWeek = DayOfWeek.MONDAY,
+        location = "Halifax",
+        temp = 15,
+        tempFeels = 22,
+        windSpeed = 10,
+        windDir = "South-West",
+        humidity = 70,
+        description = "Sunny",
+        iconId = R.drawable.day
+    ),
+   Weather(
+        id = 4,
+        date = Date(),
+        time = Time(1200000),
+        dayOfWeek = DayOfWeek.MONDAY,
+        location = "Halifax",
+        temp = 15,
+        tempFeels = 22,
+        windSpeed = 10,
+        windDir = "South-West",
+        humidity = 70,
+        description = "Sunny",
+        iconId = R.drawable.day
+    )
+)
+
 @Composable
 fun CurrentWeather()
 {
-    Column(
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier
-            .fillMaxSize()
+    LazyColumn(modifier = Modifier
             .padding()
-            .background(color=Color.DarkGray)
-    ){
-        val today = Weather(
-            id=1,
-            date= Date(),
-            time= Time(3000000),
-            dayOfWeek= DayOfWeek.MONDAY,
-            location= "Halifax",
-            temp= 20,
-            tempFeels= 22,
-            windSpeed= 10,
-            windDir= "South-West",
-            humidity= 70,
-            description= "Sunny",
-            iconId= R.drawable.day
-        )
+            .background(color = Color.DarkGray)) {
+        items(hours) { hour ->
+            if(hour.id == 1) {
+                Column(
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    modifier = Modifier
 
-        val imageModifier= Modifier
-            .height(90.dp)
-            .width(90.dp)
-            .clip(CircleShape)
-            .border(color = Color.LightGray, width = 1.dp, shape = CircleShape)
-            .background(color = Color.LightGray)
-        Image(                                      // Reference: https://developer.android.com/develop/ui/compose/graphics/images/customize
-            painter = painterResource(today.iconId ),
-            contentDescription = "Today's weather",
-            modifier = imageModifier
-        )
+                        .height(350.dp)
+                        .width(450.dp)
+                        .padding()
+                        .background(color = Color.Black)
+                ) {
 
 
-        Text(text = "${today.dayOfWeek}, ${today.time}",
-            style = MaterialTheme.typography.titleLarge,
-            fontSize = 25.sp,
-            color= Color.LightGray
-        )
-        Spacer(modifier = Modifier
-            .height(5.dp))
+                    val imageModifier = Modifier
+                        .height(150.dp)
+                        .width(150.dp)
+                        .clip(CircleShape)
+                        .border(color = Color.LightGray, width = 1.dp, shape = CircleShape)
+                        .background(color = Color.LightGray)
+                    Image(                                      // Reference: https://developer.android.com/develop/ui/compose/graphics/images/customize
+                        painter = painterResource(hour.iconId),
+                        contentDescription = "Today's weather",
+                        modifier = imageModifier
+                    )
 
-        //HorizontalDivider(Modifier, DividerDefaults.Thickness, DividerDefaults.color)
 
-        Text(text = "${today.description}, ${today.temp}°C",
-            style = MaterialTheme.typography.titleLarge,
-            fontSize = 19.sp,
-            color= Color.LightGray
-        )
-        Spacer(modifier = Modifier
-            .height(3.dp))
-        Text(
-            text = "Feels: ${today.tempFeels}°C",
-            fontSize = 15.sp,
-            color = Color.LightGray
-        )
-        Spacer(modifier = Modifier
-            .height(3.dp))
-        Text(
-            text="Wind: ${today.windSpeed} kph, towards ${today.windDir}",
-            fontSize = 15.sp,
-            color = Color.LightGray
-        )
-        Spacer(modifier = Modifier
-            .height(3.dp))
-        Text(
-            text="Humidity: ${today.humidity}%",
-            fontSize = 15.sp,
-            color = Color.LightGray
-        )
+                    Text(
+                        text = "${hour.dayOfWeek}, ${hour.time}",
+                        style = MaterialTheme.typography.titleLarge,
+                        fontSize = 25.sp,
+                        color = Color.LightGray
+                    )
+                    Spacer(
+                        modifier = Modifier
+                            .height(5.dp)
+                    )
 
+                    Text(
+                        text = "${hour.description}, ${hour.temp}°C",
+                        style = MaterialTheme.typography.titleLarge,
+                        fontSize = 19.sp,
+                        color = Color.LightGray
+                    )
+                    Spacer(
+                        modifier = Modifier
+                            .height(3.dp)
+                    )
+                    Text(
+                        text = "Feels: ${hour.tempFeels}°C",
+                        fontSize = 15.sp,
+                        color = Color.LightGray
+                    )
+                    Spacer(
+                        modifier = Modifier
+                            .height(3.dp)
+                    )
+                    Text(
+                        text = "Wind: ${hour.windSpeed} kph, towards ${hour.windDir}",
+                        fontSize = 15.sp,
+                        color = Color.LightGray
+                    )
+                    Spacer(
+                        modifier = Modifier
+                            .height(3.dp)
+                    )
+                    Text(
+                        text = "Humidity: ${hour.humidity}%",
+                        fontSize = 15.sp,
+                        color = Color.LightGray
+                    )
+
+                }
+            }
+        HorizontalDivider(Modifier, 2.dp, Color.LightGray)
+        Row(modifier = Modifier.padding(10.dp)
+        ) {
+
+            val imageModifier = Modifier
+                .height(90.dp)
+                .width(90.dp)
+                .clip(CircleShape)
+                .border(color = Color.LightGray, width = 1.dp, shape = CircleShape)
+                .background(color = Color.LightGray)
+            Image(                                      // Reference: https://developer.android.com/develop/ui/compose/graphics/images/customize
+                painter = painterResource(hour.iconId),
+                contentDescription = "Today's weather",
+                modifier = imageModifier
+            )
+
+            Spacer(modifier = Modifier.width(10.dp))
+
+            Column(modifier = Modifier.padding()) {
+                Text(
+                    text = "${hour.dayOfWeek}, ${hour.time}",
+                    style = MaterialTheme.typography.titleLarge,
+                    fontSize = 18.sp,
+                    color = Color.LightGray
+                )
+                Spacer(
+                    modifier = Modifier
+                        .height(5.dp)
+                )
+
+                Text(
+                    text = "${hour.description}, ${hour.temp}°C",
+                    style = MaterialTheme.typography.titleLarge,
+                    fontSize = 14.sp,
+                    color = Color.LightGray
+                )
+
+            }
+        }
     }
-}
+
+
+}}
