@@ -1,6 +1,7 @@
 package com.example.weatherapp.ui
 
-import android.graphics.Color
+import android.R
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CalendarMonth
@@ -21,6 +22,7 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -33,12 +35,13 @@ import com.example.weatherapp.ui.screens.ForecastWeather
 fun Navigation() {
     val navController = rememberNavController()
     var selectedIndex by remember { mutableIntStateOf(0) } // default set to 0
+    val navigation_background = Color(0x9C908F99)
     Scaffold(
         topBar = {
             TopAppBar(
                 colors = topAppBarColors(
-                    containerColor = MaterialTheme.colorScheme.surfaceTint,
-                    titleContentColor = MaterialTheme.colorScheme.surfaceBright,
+                    containerColor = navigation_background,
+                    titleContentColor = MaterialTheme.colorScheme.surfaceTint,
                 ),
                 title = {
                     Text("Your Weather App")
@@ -46,13 +49,13 @@ fun Navigation() {
             )
         },
         bottomBar = {
-            NavigationBar(containerColor = MaterialTheme.colorScheme.surfaceTint,
-                contentColor = MaterialTheme.colorScheme.surfaceBright,  //just for fun
+            NavigationBar(containerColor = navigation_background,
+                contentColor = MaterialTheme.colorScheme.surfaceBright,
                 windowInsets = NavigationBarDefaults.windowInsets)
             {
                 NavigationBarItem(
                     icon = { Icon(imageVector = Icons.Default.Today, contentDescription = "Today") },
-                    label = { Text("Today", color=MaterialTheme.colorScheme.surfaceBright) },
+                    label = { Text("Today", color=MaterialTheme.colorScheme.surfaceTint) },
                     selected = selectedIndex==0,
                     onClick = {
                         selectedIndex = 0
@@ -68,7 +71,7 @@ fun Navigation() {
 
                 NavigationBarItem(
                     icon = { Icon(imageVector = Icons.Default.CalendarMonth, contentDescription = "Forecast") },
-                    label = { Text("Forecast", color=MaterialTheme.colorScheme.surfaceBright) },
+                    label = { Text("Forecast", color=MaterialTheme.colorScheme.surfaceTint) },
                     selected = selectedIndex==0,
                     onClick = {
                         selectedIndex = 0

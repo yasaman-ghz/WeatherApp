@@ -34,6 +34,8 @@ import java.util.Date
 @Composable
 fun ForecastWeather(){
 
+    val primary_background = Color(0x3F607FC0)
+
     // Create a static list of Pokemon characters
     val days = listOf(
         Weather(
@@ -79,7 +81,7 @@ fun ForecastWeather(){
             iconId= R.drawable.day
         ),
         Weather(
-            id=1,
+            id=4,
             date= Date(),
             time= Time(3000000),
             dayOfWeek= DayOfWeek.THURSDAY,
@@ -93,7 +95,7 @@ fun ForecastWeather(){
             iconId= R.drawable.day
         ),
         Weather(
-            id=1,
+            id=5,
             date= Date(),
             time= Time(3000000),
             dayOfWeek= DayOfWeek.FRIDAY,
@@ -107,7 +109,7 @@ fun ForecastWeather(){
             iconId= R.drawable.rainy_7
         ),
         Weather(
-            id=1,
+            id=6,
             date= Date(),
             time= Time(3000000),
             dayOfWeek= DayOfWeek.SATURDAY,
@@ -121,7 +123,7 @@ fun ForecastWeather(){
             iconId= R.drawable.cloudy_day_2
         ),
         Weather(
-            id=1,
+            id=7,
             date= Date(),
             time= Time(3000000),
             dayOfWeek= DayOfWeek.SUNDAY,
@@ -138,7 +140,7 @@ fun ForecastWeather(){
 
     LazyColumn(
         modifier = Modifier.padding()
-            .background(color=Color.DarkGray)
+            .background(color=primary_background)
     ) {
         items(days) { day ->
             Row(modifier = Modifier.padding(10.dp)) {
@@ -160,7 +162,7 @@ fun ForecastWeather(){
                         "${day.dayOfWeek}, ${day.temp}°C",
                         style = MaterialTheme.typography.headlineMedium,
                         fontSize = 18.sp,
-                        color=Color.LightGray
+                        color=MaterialTheme.colorScheme.surfaceTint
                     )
 
                     Spacer(modifier = Modifier.height(1.dp))
@@ -169,7 +171,7 @@ fun ForecastWeather(){
                         "${day.description}, Feels: ${day.tempFeels}°C",
                         style = MaterialTheme.typography.headlineSmall,
                         fontSize = 16.sp,
-                        color=Color.LightGray
+                        color=Color.DarkGray
                     )
 
 

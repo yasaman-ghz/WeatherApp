@@ -47,7 +47,7 @@ val hours= listOf(
    Weather(
         id = 1,
         date = Date(),
-        time = Time(900000),
+        time = Time(-10000),
         dayOfWeek = DayOfWeek.MONDAY,
         location = "Halifax",
         temp = 17,
@@ -61,7 +61,7 @@ val hours= listOf(
    Weather(
         id = 2,
         date = Date(),
-        time = Time(1000000),
+        time = Time(2),
         dayOfWeek = DayOfWeek.MONDAY,
         location = "Halifax",
         temp = 16,
@@ -99,15 +99,297 @@ val hours= listOf(
         humidity = 70,
         description = "Sunny",
         iconId = R.drawable.day
+    ),
+    Weather(
+        id = 5,
+        date = Date(),
+        time = Time(1100000),
+        dayOfWeek = DayOfWeek.MONDAY,
+        location = "Halifax",
+        temp = 15,
+        tempFeels = 22,
+        windSpeed = 10,
+        windDir = "South-West",
+        humidity = 70,
+        description = "Sunny",
+        iconId = R.drawable.day
+    ),
+    Weather(
+        id = 6,
+        date = Date(),
+        time = Time(1100000),
+        dayOfWeek = DayOfWeek.MONDAY,
+        location = "Halifax",
+        temp = 15,
+        tempFeels = 22,
+        windSpeed = 10,
+        windDir = "South-West",
+        humidity = 70,
+        description = "Sunny",
+        iconId = R.drawable.day
+    ),
+    Weather(
+        id = 7,
+        date = Date(),
+        time = Time(1100000),
+        dayOfWeek = DayOfWeek.MONDAY,
+        location = "Halifax",
+        temp = 15,
+        tempFeels = 22,
+        windSpeed = 10,
+        windDir = "South-West",
+        humidity = 70,
+        description = "Sunny",
+        iconId = R.drawable.day
+    ),
+    Weather(
+        id = 8,
+        date = Date(),
+        time = Time(1100000),
+        dayOfWeek = DayOfWeek.MONDAY,
+        location = "Halifax",
+        temp = 15,
+        tempFeels = 22,
+        windSpeed = 10,
+        windDir = "South-West",
+        humidity = 70,
+        description = "Sunny",
+        iconId = R.drawable.day
+    ),
+    Weather(
+        id = 9,
+        date = Date(),
+        time = Time(1100000),
+        dayOfWeek = DayOfWeek.MONDAY,
+        location = "Halifax",
+        temp = 15,
+        tempFeels = 22,
+        windSpeed = 10,
+        windDir = "South-West",
+        humidity = 70,
+        description = "Sunny",
+        iconId = R.drawable.day
+    ),
+    Weather(
+        id = 10,
+        date = Date(),
+        time = Time(1100000),
+        dayOfWeek = DayOfWeek.MONDAY,
+        location = "Halifax",
+        temp = 15,
+        tempFeels = 22,
+        windSpeed = 10,
+        windDir = "South-West",
+        humidity = 70,
+        description = "Sunny",
+        iconId = R.drawable.day
+    ),
+    Weather(
+        id = 11,
+        date = Date(),
+        time = Time(1100000),
+        dayOfWeek = DayOfWeek.MONDAY,
+        location = "Halifax",
+        temp = 15,
+        tempFeels = 22,
+        windSpeed = 10,
+        windDir = "South-West",
+        humidity = 70,
+        description = "Sunny",
+        iconId = R.drawable.day
+    ),
+    Weather(
+        id = 12,
+        date = Date(),
+        time = Time(1100000),
+        dayOfWeek = DayOfWeek.MONDAY,
+        location = "Halifax",
+        temp = 15,
+        tempFeels = 22,
+        windSpeed = 10,
+        windDir = "South-West",
+        humidity = 70,
+        description = "Sunny",
+        iconId = R.drawable.day
+    ),
+    Weather(
+        id = 13,
+        date = Date(),
+        time = Time(1100000),
+        dayOfWeek = DayOfWeek.MONDAY,
+        location = "Halifax",
+        temp = 15,
+        tempFeels = 22,
+        windSpeed = 10,
+        windDir = "South-West",
+        humidity = 70,
+        description = "Sunny",
+        iconId = R.drawable.day
+    ),
+    Weather(
+        id = 14,
+        date = Date(),
+        time = Time(1100000),
+        dayOfWeek = DayOfWeek.MONDAY,
+        location = "Halifax",
+        temp = 15,
+        tempFeels = 22,
+        windSpeed = 10,
+        windDir = "South-West",
+        humidity = 70,
+        description = "Sunny",
+        iconId = R.drawable.day
+    ),
+    Weather(
+        id = 15,
+        date = Date(),
+        time = Time(1100000),
+        dayOfWeek = DayOfWeek.MONDAY,
+        location = "Halifax",
+        temp = 15,
+        tempFeels = 22,
+        windSpeed = 10,
+        windDir = "South-West",
+        humidity = 70,
+        description = "Sunny",
+        iconId = R.drawable.day
+    ),
+    Weather(
+        id = 16,
+        date = Date(),
+        time = Time(1100000),
+        dayOfWeek = DayOfWeek.MONDAY,
+        location = "Halifax",
+        temp = 15,
+        tempFeels = 22,
+        windSpeed = 10,
+        windDir = "South-West",
+        humidity = 70,
+        description = "Sunny",
+        iconId = R.drawable.day
+    ),
+    Weather(
+        id = 17,
+        date = Date(),
+        time = Time(1100000),
+        dayOfWeek = DayOfWeek.MONDAY,
+        location = "Halifax",
+        temp = 15,
+        tempFeels = 22,
+        windSpeed = 10,
+        windDir = "South-West",
+        humidity = 70,
+        description = "Sunny",
+        iconId = R.drawable.day
+    ),
+    Weather(
+        id = 18,
+        date = Date(),
+        time = Time(1100000),
+        dayOfWeek = DayOfWeek.MONDAY,
+        location = "Halifax",
+        temp = 15,
+        tempFeels = 22,
+        windSpeed = 10,
+        windDir = "South-West",
+        humidity = 70,
+        description = "Sunny",
+        iconId = R.drawable.day
+    ),
+    Weather(
+        id = 19,
+        date = Date(),
+        time = Time(1100000),
+        dayOfWeek = DayOfWeek.MONDAY,
+        location = "Halifax",
+        temp = 15,
+        tempFeels = 22,
+        windSpeed = 10,
+        windDir = "South-West",
+        humidity = 70,
+        description = "Sunny",
+        iconId = R.drawable.day
+    ),
+    Weather(
+        id = 20,
+        date = Date(),
+        time = Time(1100000),
+        dayOfWeek = DayOfWeek.MONDAY,
+        location = "Halifax",
+        temp = 15,
+        tempFeels = 22,
+        windSpeed = 10,
+        windDir = "South-West",
+        humidity = 70,
+        description = "Sunny",
+        iconId = R.drawable.day
+    ),
+    Weather(
+        id = 21,
+        date = Date(),
+        time = Time(1100000),
+        dayOfWeek = DayOfWeek.MONDAY,
+        location = "Halifax",
+        temp = 15,
+        tempFeels = 22,
+        windSpeed = 10,
+        windDir = "South-West",
+        humidity = 70,
+        description = "Sunny",
+        iconId = R.drawable.day
+    ),
+    Weather(
+        id = 22,
+        date = Date(),
+        time = Time(1100000),
+        dayOfWeek = DayOfWeek.MONDAY,
+        location = "Halifax",
+        temp = 15,
+        tempFeels = 22,
+        windSpeed = 10,
+        windDir = "South-West",
+        humidity = 70,
+        description = "Sunny",
+        iconId = R.drawable.day
+    ),
+    Weather(
+        id = 23,
+        date = Date(),
+        time = Time(1100000),
+        dayOfWeek = DayOfWeek.MONDAY,
+        location = "Halifax",
+        temp = 15,
+        tempFeels = 22,
+        windSpeed = 10,
+        windDir = "South-West",
+        humidity = 70,
+        description = "Sunny",
+        iconId = R.drawable.day
+    ),
+    Weather(
+        id = 24,
+        date = Date(),
+        time = Time(1100000),
+        dayOfWeek = DayOfWeek.MONDAY,
+        location = "Halifax",
+        temp = 15,
+        tempFeels = 22,
+        windSpeed = 10,
+        windDir = "South-West",
+        humidity = 70,
+        description = "Sunny",
+        iconId = R.drawable.day
     )
 )
 
 @Composable
 fun CurrentWeather()
 {
+    val primary_background = Color(0x3F607FC0)
+    val current_hour_background = Color(0xEB908F9B)
     LazyColumn(modifier = Modifier
             .padding()
-            .background(color = Color.DarkGray)) {
+            .background(color = primary_background)) {
         items(hours) { hour ->
             if(hour.id == 1) {
                 Column(
@@ -118,7 +400,7 @@ fun CurrentWeather()
                         .height(350.dp)
                         .width(450.dp)
                         .padding()
-                        .background(color = Color.Black)
+                        .background(color = current_hour_background)
                 ) {
 
 
@@ -139,7 +421,7 @@ fun CurrentWeather()
                         text = "${hour.dayOfWeek}, ${hour.time}",
                         style = MaterialTheme.typography.titleLarge,
                         fontSize = 25.sp,
-                        color = Color.LightGray
+                        color = MaterialTheme.colorScheme.surfaceBright
                     )
                     Spacer(
                         modifier = Modifier
@@ -149,8 +431,8 @@ fun CurrentWeather()
                     Text(
                         text = "${hour.description}, ${hour.temp}°C",
                         style = MaterialTheme.typography.titleLarge,
-                        fontSize = 19.sp,
-                        color = Color.LightGray
+                        fontSize = 23.sp,
+                        color = MaterialTheme.colorScheme.surfaceBright
                     )
                     Spacer(
                         modifier = Modifier
@@ -158,8 +440,8 @@ fun CurrentWeather()
                     )
                     Text(
                         text = "Feels: ${hour.tempFeels}°C",
-                        fontSize = 15.sp,
-                        color = Color.LightGray
+                        fontSize = 20.sp,
+                        color = MaterialTheme.colorScheme.surfaceBright
                     )
                     Spacer(
                         modifier = Modifier
@@ -167,8 +449,8 @@ fun CurrentWeather()
                     )
                     Text(
                         text = "Wind: ${hour.windSpeed} kph, towards ${hour.windDir}",
-                        fontSize = 15.sp,
-                        color = Color.LightGray
+                        fontSize = 20.sp,
+                        color = MaterialTheme.colorScheme.surfaceBright
                     )
                     Spacer(
                         modifier = Modifier
@@ -176,8 +458,8 @@ fun CurrentWeather()
                     )
                     Text(
                         text = "Humidity: ${hour.humidity}%",
-                        fontSize = 15.sp,
-                        color = Color.LightGray
+                        fontSize = 20.sp,
+                        color = MaterialTheme.colorScheme.surfaceBright
                     )
 
                 }
@@ -205,7 +487,7 @@ fun CurrentWeather()
                     text = "${hour.dayOfWeek}, ${hour.time}",
                     style = MaterialTheme.typography.titleLarge,
                     fontSize = 18.sp,
-                    color = Color.LightGray
+                    color = MaterialTheme.colorScheme.surfaceTint
                 )
                 Spacer(
                     modifier = Modifier
@@ -216,7 +498,7 @@ fun CurrentWeather()
                     text = "${hour.description}, ${hour.temp}°C",
                     style = MaterialTheme.typography.titleLarge,
                     fontSize = 14.sp,
-                    color = Color.LightGray
+                    color = Color.DarkGray
                 )
 
             }

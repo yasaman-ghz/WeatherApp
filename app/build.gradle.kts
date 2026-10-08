@@ -54,7 +54,8 @@ dependencies {
     implementation(libs.androidx.compose.material.icons.extended)
     implementation(libs.androidx.ui.graphics)
     implementation(libs.play.services.maps)
-
+ // Semantic color scheme, Reference: https://developer.android.com/develop/ui/compose/designsystems/material3
+    implementation(libs.material3)
     testImplementation(libs.junit)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
