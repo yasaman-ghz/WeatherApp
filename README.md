@@ -1,4 +1,3 @@
-```markdown
 # ☀️ Android Weather Application
 
 A lightweight Android application designed to track real-time weather forecasts. 
@@ -10,4 +9,4 @@ This application is currently under active development. The basic user interface
 * **Language:** 100% Kotlin
 * **UI Framework:** Jetpack Compose
 * **Build System:** Gradle
-```
+
